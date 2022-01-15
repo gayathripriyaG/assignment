@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            margin:auto;
+            background:white;
+            padding:2em;
+            width:80%;
+        }
+        .bigbox{
+            height:5em;
+            width:100%;
+            background-color: yellow;
+        }
+        .flex{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+        .smallbox{
+            height:25em;
+            width:48%;
+            background-color: red;
+        }
+        @media screen and (max-width :750px){
+            .smallbox{
+               width:43%;
+               margin-bottom: 1em;
+            }
+        }
+        @media screen and (max-width :500px){
+            .smallbox{
+               width:100%;
+              
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "bigbox"><h2>Navigation</h2></div>
+        <div class="flex">
+            <div class = "smallbox"><h3>LEFT BOX</h3></div>
+            <div class = "smallbox" style="background-color: chartreuse;"><h3>RIGHT BOX</h3></div>
+        </div>
+       
+    </div>
+    
+</body>
+</html>

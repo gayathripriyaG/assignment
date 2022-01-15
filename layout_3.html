@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            background-color: white;
+            margin:auto;
+            padding:2em;
+            width:80%;
+        }
+        .bigbox{
+            height:25em;
+            width:60%;
+            background-color: red;
+        }
+        .navbox{
+            height:5em;
+            width:100%;
+            background-color: yellow;
+        }
+        .smallbox{
+            height:7em;
+            width:80%;
+            background-color: chartreuse;
+            /* margin:10px; */
+        }
+        .flexbox1{
+            display:flex;
+            flex-wrap: wrap;
+            /* justify-content: space-between; */
+            margin-top: 1em;
+        }
+        .flexbox2{
+            display:flex;
+            flex-wrap: wrap;
+            width:40%;
+            justify-content: space-between;
+            flex-direction: column;
+            align-content: flex-end;
+
+        }
+        @media screen and (max-width:1200px){
+            .smallbox{
+                width:80%;
+                height:7em;
+                margin-bottom: 1em;
+            }
+            .bigbox{
+                width:60%;
+                height:25em;
+            }
+        }
+        @media screen and (max-width:700px){
+            .smallbox{
+                width:30%;
+                height:7em;
+            }
+            .flexbox1{
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .flexbox2{
+                flex-direction: row;
+                justify-content: space-between;
+                align-content:center ;
+                /* border:1px solid black; */
+                width:100%;
+                margin-top:10px;
+                
+            }
+            .bigbox{
+                width:100%;
+                height:10em;
+            }
+        }
+
+        @media screen and (max-width:400px){
+            .smallbox{
+                width:100%
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "navbox"><h2>Navigation</h2></div>
+        <div class = "flexbox1">
+            <div class = "bigbox"><h3>LEFT BOX</h3></div>
+            <div class = "flexbox2">
+                <div class = "smallbox"><h3>RIGHT BOX</h3></div>
+                <div class = "smallbox"><h3>RIGHT BOX</h3></div>
+                <div class = "smallbox"><h3>RIGHT BOX</h3></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

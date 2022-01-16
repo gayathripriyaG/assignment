@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns: 30% 30% 30%;
+            
+        }
+        @media screen and (max-width:700px){
+            #container{
+                grid-template-columns: 50% 50%;
+            }
+        }
+
+        @media screen and (max-width:400px){
+            #container{
+                grid-template-columns: 100%;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id = "container">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    var url = " https://reqres.in/api/users";
+
+    fetch(url)
+    .then(function(res){
+        // console.log('res:',res);
+        return res.json()
+    })
+    .then(function(result){
+         console.log('result:',result);
+        appendProducts(result)
+    })
+    .catch(function(err){
+        console.log('error:',err);
+    })
+
+    function appendProducts(element){
+     var product = element.data
+     product.forEach(ele => {
+        var div  = document.createElement('div')
+        var img = document.createElement('img')
+        var first_namee = document.createElement('p')
+        var emaill = document.createElement('p')
+        var idd = document.createElement('p')
+
+        img.src = ele.avatar;
+        first_namee.innerText = ele.first_name;
+        idd.innerText = ele.id;
+        emaill.innerText = ele.email
+
+        div.append(idd,first_namee,emaill,img)
+        container.append(div)
+
+
+
+     })
+       
+    }
+
+
+
+
+
+
+</script>

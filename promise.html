@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" id = "inp" placeholder="enter milliseconds"/>
+    <button id = "button">submit</button>
+    
+</body>
+</html>
+<script>
+ document.getElementById('button').addEventListener("click",getvalue)
+
+
+ function getvalue(){
+     var sec = document.getElementById('inp').value
+    //  console.log(sec);
+var mypromise = new Promise(function(resolve,reject){
+   if(sec>=0 && sec<Number.MAX_SAFE_INTEGER){
+     resolve({
+         success:true,
+         message:"success"
+     })
+
+   }
+   else{
+    reject({
+          success:false,
+          message:"invalid argument, promise accepts only valid numbers"
+      })
+
+   }
+
+})
+
+
+mypromise.then(function(res){
+    console.log("res:",res);
+})
+.catch(function(err){
+    console.log("err:",err);
+})
+
+
+
+ }
+ 
+
+
+</script>

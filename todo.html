@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            text-align: center;
+            
+        }
+        .submitinp{
+            margin-top: 1rem;
+            width:10%;
+            height:30px
+        }
+        .todo-after{
+            text-align: center;
+        }
+        .todo-name{
+            border:1px solid black;
+            margin-left:30%;
+            margin-right: 30%;
+            padding:20px;
+            font-size: larger;
+            
+        }
+    </style>
+</head>
+<body>
+    <form>
+      <input type = "text" class = "textinp"/>
+      <input type = "checkbox" class = "checkinp"/><br/>
+      <button class = "submitinp">Add</button>
+
+    </form>
+
+    <div class = "todo-after">
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+var submit = document.querySelector('.submitinp')
+submit.addEventListener("click",mytodo);
+
+function mytodo(event){
+    event.preventDefault();
+    var todo = document.querySelector('.textinp').value
+    var box = document.querySelector('.checkinp').checked
+   
+
+
+var data = {
+    "title": todo,
+    "status":box
+};
+//console.log(data);
+
+ //to post
+fetch("https://json-server-mocker-masai.herokuapp.com/tasks", {
+    method: "POST",
+  body: JSON.stringify(data),
+  headers: { "Content-type": "application/json; charset=UTF-8" },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .catch((err) => console.log(err));
+
+  //to get
+fetch('https://json-server-mocker-masai.herokuapp.com/tasks',{
+    method:"GET",
+    headers:{"content-type":"application/json:charset=UTF-8"}
+
+}).then(response => response.json())
+.then((json) => appendProducts(json))
+.catch(err => console.log("err:",err))
+
+function appendProducts(data){
+    
+    data.forEach(function(el){
+    var name = document.createElement('p')
+name.setAttribute("class","todo-name");
+if(el.status === true){
+    name.innerHTML = el.title
+    name.style.color = "green"
+}
+else{
+    name.innerHTML = el.title
+    name.style.color = "red"
+}
+
+document.querySelector(".todo-after").append(name)
+})
+}
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+</script>

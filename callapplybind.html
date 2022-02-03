@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call,apply,bind</title>
+</head>
+<body>
+    <h1>Call,apply,bind</h1>
+    
+</body>
+</html>
+
+<script>
+    function Teacher(gender,age){
+        this.gender = gender;
+        this.age = age;
+    }
+
+  function Person(name,subject,gender,age){
+      Teacher.call(this,gender,age)
+      this.name = name;
+      this.subject = subject;
+  }
+  function Person2(name,subject,gender,age){
+      Teacher.apply(this,[gender,age])
+      this.name = name;
+      this.subject = subject;
+  }
+
+  function Person3(name,subject,gender,age){
+      let teacher = Teacher.bind(this,gender,age);
+      teacher();
+      this.name = name;
+      this.subject = subject;
+  }
+
+  let per1 = new Person('alexis','maths','female','21')
+  let per2 = new Person2('maya','social','female','18')
+  let per3 = new Person3('david','physics','male','20')
+  console.log("person1:",per1);
+  console.log("person2:",per2);
+  console.log("person3:",per3);
+
+
+
+
+
+</script>

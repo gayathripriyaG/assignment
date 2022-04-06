@@ -1,0 +1,87 @@
+1.how to add comments on css?
+ans: /* we can add our comments here */
+
+2.Why do we use pseudo-class?
+ans: Pseudo-classes are used to specify a special state of the selected elements of a selector.
+    ex: :hover,:visited etc.,
+
+3.How is specificity applied?
+ans: specificity is calculated to determine which style to be applied. specificity is applied as
+     1.Inline styles - Example: <h1 style="color: pink;"> 
+       highest priority
+       specificity value = 1000
+     2.IDs - Example: #navbar
+       specificity value = 100
+     3.Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+       specificity value = 10
+     4.Elements and pseudo-elements - Example: h1, :before
+        least priority
+        specificity value = 1
+
+4.What method allows an element to be moved from its current position?
+ans: using position property.
+
+5.what properties does flex model have?
+ans: display,flex-direction,flex-wrap,flex-flow,justify-content,align-items,align-content
+     parent-properties: order,flex-grow,flex-shrink,flex-basis,flex,flex-self
+
+6.What is the difference between flex and grids?
+ans:flex - is used for alignment, one dimemsional
+            ->best for arranging items in single row or column
+            ->The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available 
+            space (mostly to accommodate to all kind of display devices and screen sizes)
+            ->A flex container expands its items to fill available free space or shrinks them to prevent overflow
+    grid - is used for layout, two dimemsional
+           ->best for arranging items in multiple rows and columns
+           ->CSS Grid outshines at dividing a page into several sections or defining the correlation in terms of size, position, and layer
+
+7.Give an example where we have to use grids and where you have to use flexbox?
+ans:use grid when you already have the layout structure in mind, and flex when you just want everything to fit.
+
+8.What are combinators? give examples of how you can use them?
+ans:A combinator is something that explains the relationship between the selectors.
+    A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+    There are four different combinators in CSS:
+    descendant selector (space)
+    child selector (>)
+    adjacent sibling selector (+)
+    general sibling selector (~)
+
+9.What does object-fit do?
+ans:The CSS object-fit property is used to specify how an <img> or <video> should be resized to fit its container.
+
+10.What does rotate do?
+ans:The rotate() method rotates an element clockwise or counter-clockwise.
+     ex:transform: rotate(20deg);
+        rotates by 20degrees
+
+11.What rule can be used to define animations?
+ans:The @keyframes rule specifies the animation.
+
+12.When working with attribute selectors, how can you select elements which contain a particular attribute value?
+ans:selector[attribute="value"]
+
+13.What does @media do?
+ans:The @media CSS at-rule can be used to apply part of a style sheet based on the result of one or more media queries.
+
+14.What can be used to override properties of an element?
+ans:Add inline styles to the elements.
+    create and append a new <style> element, and add the text to override this style to it.
+    Modify the css rule itself.
+    Increasing the specificity
+
+15.How can you select every alternate elements in a list of elements using css?
+ans:we can use pseudo-class :nth-child(2n) or :nth-child(n)
+
+16.What is the ranking of selectors with respect to specificity?
+ans:IDs
+    classes
+    pseudo element
+    universal selector
+
+18.how can we apply same styles to multiple selectors?
+ans:we can group multiple selectors and apply the styles.
+
+19.What are the differences between relative and absolute in CSS?
+ans:position: relative places an element relative to its current position without changing the layout around it, whereas 
+    position: absolute places an element relative to its parent’s position and changing the layout around it.

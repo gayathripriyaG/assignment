@@ -1,0 +1,168 @@
+1.Explain briefly what happens when you hit a url? explain DNS lookup?
+ans: url means uniform resource locator.URL is the address of the website which you can find in the address bar of your web browser.
+    DNS is short for Domain Name System. Like a phonebook, DNS maintains and maps the name of the website, i.e. URL, and particular IP address it links to. 
+    Every URL on the internet has a unique IP address which is of the computer which hosts the server of the website requested.
+    steps:
+    1.firstly the browser checks in cache for DNS entry to find the corresponding IP address.
+      It looks for following cache. If not found in one, then continues checking to the next until found.
+      Browser Cache
+      Operating Systems Cache
+      Router Cache
+      ISP Cache
+      2.If not found in cache, ISP’s (Internet Service Provider) DNS server initiates a DNS query to find IP address of server that hosts the domain name.
+        The requests are sent using small data packets that contain information content of request and IP address it is destined for.
+      3.Browser initiates a TCP (Transfer Control Protocol) connection with the server using synchronize(SYN) and acknowledge(ACK) messages.
+      4.Browser sends an HTTP request to the web server. GET or POST request.
+      5.Server on the host computer handles that request and sends back a response. It assembles a response in some format like JSON, XML and HTML.
+      6.Server sends out an HTTP response along with the status of response.
+      7.Browser displays HTML content
+
+2.What is a URLs full form? Explain what a url is and the four parts it consists of The protocol 
+  in use The hostname of the server The location of the file The arguments to the file?
+ans: URL - Uniform Resource Locator. A URL normally locates an existing resource on the Internet. A URL is used when a web client makes a request to a server for a resource.
+     components of url:
+     
+     ex: https://www.example.co.uk:443/blog/article/search?docid=720&hl=en#dayone
+
+     scheme: The scheme identifies the protocol to be used to access the resource on the Internet.(HTTP/HTTPS)
+              ex:http
+     subdomain: The subdomain is used to separate different sections of the website as it specifies the type of resource to be delivered to the client.
+               ex:www 
+     Domain Name: Domain name specifies the organization or entity that the URL belongs to.
+                  ex: example
+     Top level Domain: The TLD (top-level domain) indicates the type of organization the website is registered to. Like the .com in www.facebook.com 
+                       indicates a commercial entity. Similarly, .org indicates organization
+                       ex:.co.uk
+      Port number : A port number specifies the type of service that is requested by the client since servers often deliver multiple services. 
+                    Some default port numbers include 80 for HTTP and 443 for HTTPS servers.
+                    ex: 443
+      Path: Path specifies the exact location of the web page, file, or any resource that the user wants access to.
+            ex: /blog/article/search
+      Query String Separator :The query string which contains specific parameters of the search is preceded by a question mark (?).
+                              The question mark tells the browser that a specific query is being performed. (?)
+      Query string: The query string specifies the parameters of the data that is being queried from a website’s database. Each query string is made up of a parameter and a value joined by the equals (=) sign.
+                    In case of multiple parameters, query strings are joined using the ampersand (&) sign. 
+                    ex:docid=720&hl=en 
+      fragment: The fragment identifier of a URL is optional, usually appears at the end, and begins with a hash (#). It indicates a specific location within a page
+                  such as  the ‘id’ or ‘name’ attribute for an HTML element.
+                  ex:#dayone
+
+
+3.What is HTTP protocol?
+ans: HTTP - hyper text transfer protocol
+    HTTP protocol is used to fetch data like html docs, images, videos and we also post data to the server and
+    allows users to communicate data on the World Wide Web.
+    It is a client-server Protocol where client is the web browser.
+
+4.What is TCP Protocol?
+ans: TCP - transmission control protocol
+    The TCP connection is used to send a request, or several, and receive an answer. The client may open a new connection, reuse an existing connection,
+    or open several TCP connections to the servers. TCP sends data in small bundles.
+     It is a connection-oriented protocol for communications that helps in the exchange of messages between the different devices over a network.
+
+5.Explain all the different HTTP methods?
+ans: GET requests a specific resource in its entirety
+     HEAD requests a specific resource without the body content
+     POST adds content, messages, or data to a new page under an existing web resource
+     PUT directly modifies an existing web resource or creates a new URI if need be
+     DELETE gets rid of a specified resource
+     TRACE shows users any changes or additions made to a web resource
+     OPTIONS shows users which HTTP methods are available for a specific URL
+     CONNECT converts the request connection to a transparent TCP/IP tunnel
+     PATCH partially modifies a web resource
+
+6.What are HTTP headers?
+ans: The HTTP headers are used to pass additional information between the clients and the server through the request and response header.
+
+7.What are some HTTP response codes? what does it mean? 2xx, 3xx, 4xx, 5xx?
+ans: 100 - 199 Informational responses
+     200 - 299 Successful responses
+     300 - 399 Redirection messages
+     400 - 499 Client error responses
+     500 - 599 Server error responses
+
+8.What does cache control on http response mean?
+ans:Cache-control is an HTTP header that dictates browser caching behavior. In a nutshell, when someone visits a 
+    website, their browser will save certain resources, such as images and website data, in a store called the cache. 
+    When that user revisits the same website, cache-control sets the rules which determine whether that user will have 
+    those resources loaded from their local cache, or whether the browser will have to send a request to the server for fresh resources.
+
+9.What is polling?
+ans: Polling is a mechanism used by the Push technology whereby a request is sent by the client to the server at regular intervals. In return, 
+    the server updates the status of connected client.
+
+10.What is long polling?
+ans:HTTP Long Polling is a technique used to push information to a client as soon as possible on the server. As a result, the server does not have to
+    wait for the client to send a request. In Long Polling, the server does not close the connection once it receives a request from the client. Instead, the 
+    server responds only if any new message is available or if a timeout threshold is reached.
+
+11.What are web sockets?
+ans:A WebSocket is a persistent connection between a client and server. WebSockets provide a bidirectional, full-duplex communications channel that operates over 
+    HTTP through a single TCP/IP socket connection
+
+12.How is web sockets different from HTTP?
+ans:Unlike HTTP, where you have to constantly request updates, with websockets, updates are sent immediately when they are available. WebSockets keeps a single, persistent 
+    connection open while eliminating latency problems that arise with HTTP request/response-based methods.
+
+13.What is HTTPS?
+ans: Hypertext transfer protocol secure (HTTPS) is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website. 
+      HTTPS is encrypted in order to increase security of data transfer. Any website, especially those that require login credentials, should use HTTPS. In modern web browsers 
+      such as Chrome, websites that do not use HTTPS are marked differently than those that are. This uses TLS (transport layer security) protocol
+
+14.What is Cross Origin Resource Sharing? ( CORS ) Why do we need it?
+ans: It allows you to make requests from one website to another website in the browser, which is normally prohibited by another browser policy called the Same-Origin Policy (SOP).
+
+15.What does Access-Control-Allow-Origin header do?
+ans: It is a CORS header.
+     When Site A tries to fetch content from Site B, Site B can send an Access-Control-Allow-Origin response header to tell the browser that the content of this page is 
+     accessible to certain origins. (An origin is a domain, plus a scheme and port number.) By default, Site B's pages are not accessible to any other origin; using the 
+     Access-Control-Allow-Origin header opens a door for cross-origin access by specific requesting origins.
+
+16.What is clickjacking? How do you fix it?
+ans: Clickjacking is an attack that tricks a user into clicking a webpage element which is invisible or disguised as another element. This can cause users to unwittingly
+     download malware, visit malicious web pages, provide credentials or sensitive information, transfer money, or purchase products online.
+     fixing:
+     A better approach to prevent clickjacking attacks is to ask the browser to block any attempt to load your website within an iframe. You can do it by sending the X-Frame-Options HTTP header.
+
+17.What are some performance metrics for your website?
+ans: a. website speed
+     b. Number of assets (more the images and videos more the time to load the page)
+     c. Error rate
+     d. Bounce rate (This metric refers to the number of users who are departing from your site shortly after arriving)
+     e. Unique visitors
+     f. Traffic source
+     g. conversion rate
+
+18.What does the following term mean?
+    a. Time to first byte,
+    b. Page load time
+ans: a. Time to First Byte (TTFB) refers to the time between the browser requesting a page and when it receives the first byte of information from the server.
+     b. the average amount of time it takes for a page to show up on your screen.
+
+19.What do CDN or Content Delivery Networks do? When do you need a CDN?
+ans:A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content.
+    A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and videos. 
+
+20.What is the difference between Client Side Renderring and Server Side Renderring?
+ans: Server side rendering:
+     In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s machine over the internet. 
+     The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML page and sending it to client happens in mere milliseconds.
+     Now Imagine that a user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only increases the load 
+     on the server but also consumes unnecessary internet bandwidth.
+
+     Client side rendering:
+     When we talk about client-side rendering, it’s about rendering content in the browser using JavaScript. So instead of getting all the content from the HTML document itself, a bare-bones HTML 
+     document with a JavaScript file in initial loading itself is received, which renders the rest of the site using the browser.
+     With client-side rendering, the initial page load is naturally a bit slow. However, after that, every subsequent page load is very fast. In this approach, communication with server happens only for getting the run-time data.
+
+21.What is Progressive Renderring?
+ans: Progressive Rendering, also known as Progressive Server Side Rendering, is a technique for updating tiny sections of a webpage progressively and streaming it to the client in segments rather than waiting for the full page to be displayed.
+     It implies that once the important material is produced on the server, you may stream it to the client without having to wait for non-critical stuff to be displayed. It combines the advantages of both CSR (Client Side Rendering) and SSR 
+     (Server Side Rendering) (Server Side Rendering).
+
+22.What is the difference between Preloading and Prefetching resources?
+ans: preload: tells the browser that it must download a given resource as soon as possible, with high priority.
+     prefetch: indicates to the browser that it can download a given resource, even if it is not detected in the page. The resource is downloaded with a low priority.
+
+23.What are service workers?
+ans:It's essentially a JavaScript file that runs separately from the main browser thread, intercepting network requests, caching or retrieving resources from the cache, and delivering push messages.

@@ -1,0 +1,51 @@
+1.What are some new things happening in the web?
+ans: a. Web 3.0 is a hot-topic among the web developers right now because it is coming with many new advance technologies 
+     which we lack in web 2.0.
+     b. New frameworks are getting introduced with more advance features than the existing ones.
+
+2.Explain a project that you have built?
+ans: During my time at MAsai i have built 3-Projects and now i want to discuss about main project which we have done at
+     the end of our curriculum which is a clone of healthkart.
+     a. We have used React, Redux, Express, Mongodb, Nodejs in this project.
+     b. we have included all the important features that the original website has like a mega dropdown, sorting,
+        filtering, adding products to cart and wishlist and checking out successfully after the payment.
+     c. We have made our UI almost similar to the original website and it is completely responsive to all the screen sizes
+
+
+3.Whats something exciting that you have built?
+ans: The main project which we have made in our last unit is very exciting one because it has backend incorporated with 
+     frontend and anyone who's using that website will wonder if it is real. One has to visit our website to experience 
+     what i am talking about. 
+      
+4.What are you most excited about?
+ans:Learning. It is like food to my brain. Learning new things will always excite me.
+
+5.Why do coding standards matter? What are some patterns you follow?
+ans: organizations want their programmers to maintain to some well-defined and standard style of coding called coding standards.
+     a. A coding standard gives a uniform appearance to the codes written by different engineers.
+     b. It improves readability, and maintainability of the code and it reduces complexity also.
+     c. It helps in code reuse and helps to detect error easily.
+     Patterns I follow:
+     a. Writing meaningful and understandable names for variables, functions etc.
+     b. Using white spaces properly for indetification of different things.
+     c. Adding comments where ever it is necessary for easy understanding.
+     d. Making sure that the length of my function is not large.
+     e. Breaking down my code into multiple files where each file has specific task different from others. 
+
+6.How do you go about managing responsive websites?
+ans: a. setting appropriate responsive breakpoints.
+     b. Using responsive images and videos
+     c. Designing the website by keeping touchscreens in mind.
+     d. Testing in real devices.
+
+7.What do you care about the most when you write software?
+ans: Analysis. Analyzing what we want and how to approach that is very crucial step in my opinion. If this is done right
+     then we can easily go to Desiging, Coding and Testing the software.
+
+8.What is web 3.0?
+ans: web 1.0(1991-2004) --> just static pages which shows information. There is no interaction(read only)
+     web 2.0(2004-now) --> interaction between user and webpage is introduced. Started storing data of users and sell it to 
+                           advetizers. It is the age of targeted advertizing and lack of privacy. The content we see is 
+                           what we have given to the site(different to each person ex: facebook)
+     web 3.0(future) --> till now user i.e consumers are products but now we can be owner sole owner of our data.
+                           ai driven services, blockchain technology helps in decentralized data storage

@@ -1,0 +1,34 @@
+1.MVC architecture?
+
+model,views,controller.
+
+Simply put, the controller component gets all the requests for the application and then orders the model component to prepare any information required by the view. 
+The view component makes use of the data from the controller and gives the final output.
+
+Model:
+As the model represents the data to the user, it is the most important level. 
+This level defines the storage location of the application’s data objects. 
+The model component is interlinked with the controller and view components. 
+The model component need not be a single object and it may come as a structure of objects.
+
+Views:
+he view component displays the model data to the user. 
+It helps in creating an interface that shows the final output to the user. 
+It is obvious that a view component will not display anything of itself. 
+The view component displays the output to the users upon receiving the instruction/information from the controller/model. 
+In addition, it collects requests from the user-end and informs the controller.
+The model component and view components are connected to each other. 
+The view component gets the data necessary for the presentation from the model with the help of certain questions. 
+These questions are answered and sent back to the view component with easy terminology so that they can understand the answers sent by the model/controller easily.
+
+Controller:
+The controller component acts as the central unit of the MVC architecture. 
+In addition, the controller component acts as a bridge between a user and the system. 
+The controller component understands the output, processes/converts it to appropriate messages and sends it to the view component.
+
+Advantages:
+Ideal for Developing Large Size Web Application
+Modifications do not Affect the Entire Model
+Supports Asynchronous Method Invocation
+Develop Multiple View Components for your Model
+Accelerated Development Process

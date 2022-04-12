@@ -1,0 +1,244 @@
+1.What is hoisting?
+ans: Being able to access the variables even before declaring them is called hoisting
+
+2.What is scoping?
+ans: scoping is something that tells us where we can access our variables in the code.
+
+3.How are var, let const different?
+ans: var: global scope, can be redeclared and reassigned
+     let: block scope, cannot be redeclared but can be reassigned.
+     const: block scope, cannot be reassigned and redeclared.
+
+4.Does Call apply bind work for arrow functions?
+ans:No, because as arrow functions doen't have their own this we cannot apply them.
+
+5.What does call apply bind do?
+ans: call: Call is like borrowing functions from other methods/objects and using them in our current method.
+     apply:call and apply work the same way but the difference is the way which we pass arguments.
+     bind: bind doesn't invoke the function directly instead it creates a copy of that function which we can use in later part of our code.
+
+6.write a programe to flaten an array?
+ans: arr.reduce((acc, val) => acc.concat(val), []);
+
+7.What are closures?
+ans: A function bundled along with its lexical environment is called as closure.
+
+8.What is a  polyfill?
+ans: A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
+
+9. what is function currying?
+ans: Currying is a process in functional programming in which we can transform a function with multiple arguments into a 
+     sequence of nesting functions. It returns a new function that expects the next argument inline.
+     In other words, when a function, instead of taking all arguments at one time, takes the first one and return a new function that takes the second 
+     one and returns a new function which takes the third one, and so forth, until all arguments have been fulfilled.
+
+10. What is event loop?
+ans: Even loop is something which helps in executing the js code by continuosly checking callstack and callback 
+     queue and pushing the items in the callback queue to callstack.
+
+11.Write a program to debounce a search bar?
+ans:
+ const optimisedSearchHandler = debounceFunc(searchHandler, 500)
+const debounceFunc = (func, delay) => {
+   let timer;
+    return function(...args) {
+       const context = this;
+       clearTimeOut(timer);
+       timer = setTimeOut(() => {
+           func.apply(context, args);
+       }, delay)
+     }
+}
+
+<input
+className="search-bar"
+onChange={ optimisedSearchHandler }
+/>
+
+12.Write a program to throttle a search bar?
+ans:
+const optimisedTriggerHandler = throttleFunc(handlerTrigger, 100);
+const throttleFunc = (func, interval) => {
+     let shouldFire = true;
+   return function() {
+         if (shouldFire) {
+             func();
+             shouldFire = false;
+             setTimeOut(() => {
+               shouldFire = true;
+              }, interval)
+          }
+       }
+  }
+
+  window.addEventListener(onclick, optimisedTriggerHandler);
+
+13.what is event bubbling and capturing?
+ans: Event bubbling is the order in which event handlers are called when one element is nested inside a 
+     second element, and both elements have registered a listener for the same event (a click, for example). 
+     With bubbling, the event is first captured and handled by the innermost element and then propagated to 
+     outer elements.
+     With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+14.Explain promises to a 5 year old, with simple examples
+ans: Promises are used to deal with the asynchronous operations of javascript instead of callbacks because callbacks 
+     can create a callback hell. Any promised can either be fullfilled or not fulfilled. To find out taht we have 
+     promise consumers .then() and .catch(). If the promise is fulfilled the code or the callback function inside the 
+     .then method gets executed else if we get any error or the promise is not fulfilled it goes to .catch method to handled
+     errors. 
+
+     ex: let p = new Promise((resolve,reject) => {
+          let a = 1+1;
+          if(a === 2){
+               resolve("fulfilled")
+          }
+          else{
+               reject("not fulfilled")
+          }
+     })
+
+     p.then((message) => {
+          console.log("Promise is" + message)
+     }).catch((message) => {
+           console.log("Promise is" + message)
+     })
+
+     every promise takes two thing resolve and reject. if the promise is fulfilled then resolve executes which after 
+     .then gets executed. else it goes to reject and .catch gets executed.
+
+
+15.what does async await mean?
+ans: Async and await are extension of promises we use then to handle asynchronous operations in js.
+     what async does is it makes the function asynchronous and allows us use await key word with in that function.
+     Await waits till the promise return some value and then executes the next line.
+
+16.What does the this keyword mean?
+ans: this keyword in js refers to an object. the object depends where the this is being used.
+     alone - this refers to global object
+     in object - this refers to object
+     in function - this refers to global object
+     in function(strict mode) - this gives undefined
+     in event - this refers to the element that recieved the event
+
+17.What are classes? what are getters and setters?
+ans: js classes are the templates for js objects. that is there are used to create objects mainly and they also have
+     a method called constructor. It is not an object just a template for object. Constructor is called everytime a new 
+     object is created. Constructor consists of the properties of thhe object.
+
+     getters:
+     const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language;
+  }
+};
+
+let p = new person()
+ 
+ get keyword is used to access the data in the object and we can access that as p.lang.(normally we call methods in classes as p.lang())
+
+setters:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "",
+  set lang(lang) {
+    this.language = lang;
+  }
+};
+
+let p = new person()
+
+set keyword is used to set the data in the object. can be accesses as p.lang
+
+adv:
+they provide similar syntax for variables and methods
+easy to write and read
+
+
+18.How do you declare private and static variables in classes
+ans:static:
+ We used the static keyword to make a variable static just like the 
+ constant variable is defined using the const keyword. It is set at 
+ the run time and such type of variable works as a global variable. 
+ We can use the static variable anywhere. The value of the static 
+ variable can be reassigned, unlike the constant variable.
+
+ We create a static variable in JavaScript to prevent replication, fixed-configuration, 
+ and it is also useful for caches. 
+ Static variable is called using this keyword.
+
+ private:
+ Private variables are only limited to that particular class. we declare a private variable by using private keyword.
+
+19.Write a function called sleep that will return a promise, if you do not provide a number to the function, 
+  then it will return an error and goto the catch block?
+ans: 
+  function sleep(num){
+       return new Promise((resolve,reject) => {
+            if(!isNaN(num)){
+               resolve(num)
+              }
+            else{
+               reject("enter a valid number")
+             }
+       })
+    
+  }
+
+ sleep(500).then(res=> {
+ console.log('slept for ${res} milli seconds})
+})
+.then(errr=>{
+  console.log(err)
+})
+
+20.Create a Calculator class, it should be able to add, reduce multiply and divide. it should have a value getter, 
+   and that should return final output. keep the history of changes made as well, and keep that private, and a user 
+   should be able to see previous changes made to the value
+ans: class Calculator{
+       constructor(num1,num2){
+            this.num1 = num1
+            this.num2 = num2    
+       }
+       
+       add(){
+            return this.num1+this.num2
+       }
+
+       reduce(){
+            return this.num1-this.num2
+       }
+       multiply(){
+            return this.num1*this.num2
+       }
+       get divide(){
+            return this.num1/this.num2
+       }
+
+
+      }
+
+      let c1 = new Calculator(10,5)
+       
+       console.log(c1.add())
+       console.log(c1.divide) //coz of get
+
+
+
+
+21.create a custom method for an array called myMap, use prototype chain to achieve this
+  const arr = [1,2,3]
+arr.myMap(a=>a*5)
+// [ 5, 10, 15 ]
+it should work in this manner
+ans:
+Array.prototype.myMap = function(arr){
+   for(var i =0;i<arrllength;i++){
+        arr[i] = arr[i]*5
+   }
+
+   return arr
+}

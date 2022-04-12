@@ -1,0 +1,97 @@
+export class Todo extends React.component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            todo:[],
+            query:"
+        }
+
+        this.handleChange = this.handleChange.bind(this)  //we use bind i mean this step when the function is not an arrow function bcoz other wise it will point to window object.
+
+    }
+
+   handleChange(e) {
+       console.log(this)
+
+       this.setState({
+           query: e.target.value
+       })
+   }
+
+   handleAdd(){
+       const {query} = this.state
+       const payload = {
+           title: query,
+           status: false
+       };
+
+       axios.post("urlhere",payload)
+       .then((res) => {
+           this.handleGetTodos()
+       }
+          
+       )
+       .catch((err) => console.log(err))
+   }
+
+
+   handleGetTodos(){
+       return  axios.get("urlhere")
+         .then((res) => this.setState(
+             {
+                 todo: res.data
+             },
+             () => console.log(this.state)
+         ))
+         .catch((err) => console.log(err))
+   }
+
+
+   handleDelete(id){
+       axios.delete(`url here /${id}`)
+       .then((res) => this.handleGetTodos())
+       .catch((err) => console.log(err))
+
+   }
+
+
+//this is like useEffect but we in classes we can only have one
+  componentDidMount(){
+   this.handleGetTodos()
+  }
+
+  render(){
+      const {query,todo} = this.state;
+
+      return(
+          <>
+           <div>
+             <h1>Todo</h1>
+             <input value = {query}
+                    onChange={this.handleChange}
+                    />
+            <button onClick={this.handleAdd.bind(this)}>Add todo</button>
+            <div>
+            {todo?.map((item) => (
+            <div key = {item.id}>
+             {item.title}
+             <button onClick={this.handleDelete.bind(this,item.id)}>delete</button>
+            
+            </div>
+            )
+            )}
+            </div>
+
+           </div>
+          </>
+      )
+  }
+
+
+
+
+
+
+}

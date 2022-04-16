@@ -111,6 +111,7 @@ ans: Promises are used to deal with the asynchronous operations of javascript in
 ans: Async and await are extension of promises we use then to handle asynchronous operations in js.
      what async does is it makes the function asynchronous and allows us use await key word with in that function.
      Await waits till the promise return some value and then executes the next line.
+     if a function is async it basically returns a promise
 
 16.What does the this keyword mean?
 ans: this keyword in js refers to an object. the object depends where the this is being used.

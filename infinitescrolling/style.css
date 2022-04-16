@@ -1,0 +1,13 @@
+.container {
+    width: 40%;
+    border: 18px solid aquamarine;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aquamarine;
+  }
+  .boxing {
+    border-bottom: 2px solid pink;
+  }

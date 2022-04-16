@@ -1,0 +1,21 @@
+1.What are IIFE?
+ans:An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+ex:
+1.(function () {
+  /* ... */
+})();
+2.Arrow function (() => {
+  /* ... */
+})();
+3.using async (async () => {
+  /* ... */
+})();
+
+2.What is currying?
+ans: Function currying is basically transforming a function with multiple arguments into a sequence of
+     nested functions . It returns a new function and expects new argument inline.
+
+3.Explain some areas where you have seen currying being implemented in React / other libraries?
+ans: currying is used in higher order functions.
+
+
